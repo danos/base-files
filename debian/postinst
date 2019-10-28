@@ -1,0 +1,32 @@
+#! /bin/sh
+
+set -e
+
+vyatta_sysconfdir=/opt/vyatta/etc/config
+
+case "$1" in
+    configure)
+	ln -sf vyatta /etc/dpkg/origins/default
+
+	if ! dpkg-statoverride --list ${vyatta_sysconfdir} >/dev/null; then
+            dpkg-statoverride --add --update root root 2755 \
+		${vyatta_sysconfdir}
+        fi
+
+	for dir in scripts auth support user-data; do
+	    if ! dpkg-statoverride --list ${vyatta_sysconfdir}/${dir} >/dev/null; then
+		dpkg-statoverride --add --update root root 2755 \
+		    ${vyatta_sysconfdir}/${dir}
+            fi
+	done
+
+	if ! dpkg-statoverride --list /opt/vyatta/tmp >/dev/null; then
+	    dpkg-statoverride --add --update root root 1777 \
+		/opt/vyatta/tmp
+	fi
+	;;
+esac
+
+#DEBHELPER#
+
+exit 0

@@ -1,0 +1,25 @@
+#!/bin/sh
+
+set -e
+
+pkg=base-files-vyatta
+
+case "${1}" in
+    remove|abort-install|disappear)
+	if [ "$(readlink /etc/dpkg/origins/default)" = "vyatta" ]; then
+	    ln -sf debian /etc/dpkg/origins/default
+	fi
+
+	for file in /etc/issue /etc/issue.net; do
+	    if [ -e ${file}.debian -a -L ${file} ]; then
+		rm -f ${file}
+		dpkg-divert --package ${pkg} --remove --rename \
+                    --divert ${file}.debian ${file}
+	    fi
+        done
+	;;
+esac
+
+#DEBHELPER#
+
+exit 0

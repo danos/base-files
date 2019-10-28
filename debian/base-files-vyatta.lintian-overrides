@@ -1,0 +1,2 @@
+base-files-vyatta: new-essential-package
+base-files-vyatta: dir-or-file-in-opt

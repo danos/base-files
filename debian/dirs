@@ -1,0 +1,13 @@
+etc
+etc/dpkg/origins
+opt/vyatta/bin
+opt/vyatta/etc/config/auth
+opt/vyatta/etc/config/scripts
+opt/vyatta/etc/config/user-data
+opt/vyatta/etc/config/support
+opt/vyatta/sbin
+opt/vyatta/share
+opt/vyatta/tmp
+opt/vyatta/var/run
+usr/share/base-files-vyatta
+var/log/vyatta

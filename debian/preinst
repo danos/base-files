@@ -1,0 +1,21 @@
+#!/bin/sh
+
+set -e
+
+pkg=base-files-vyatta
+
+case "${1}" in
+    install|upgrade)
+        for file in /etc/issue /etc/issue.net; do
+	    if ! [ -e ${file}.debian ]; then
+		dpkg-divert --package ${pkg} --add --rename \
+                    --divert ${file}.debian ${file}
+		ln -sf ${file}.vyatta ${file}
+	    fi
+        done
+	;;
+esac
+
+#DEBHELPER#
+
+exit 0

@@ -1,0 +1,5 @@
+base-files (0.6) vyatta; urgency=medium
+
+  * DANOS Import master
+
+ -- Vyatta Package Maintainers <DL-vyatta-help@att.com>  Mon, 28 Oct 2019 15:44:01 +0000

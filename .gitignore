@@ -1,0 +1,4 @@
+debian/base-files-vyatta.debhelper.log
+debian/base-files-vyatta.substvars
+debian/base-files-vyatta/
+debian/files

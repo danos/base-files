@@ -1,0 +1,17 @@
+Source: base-files
+Section: admin
+Priority: required
+Maintainer: Vyatta Dev <vyattanet-dev@mail.eng.vyatta.net>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.6
+
+Package: base-files-vyatta
+Architecture: any
+Pre-Depends: base-files (>= 7.0)
+Depends: ${misc:Depends}
+Essential: yes
+Priority: required
+Multi-Arch: foreign
+Description: Vyatta Network OS base system miscellaneous files
+ This package contains the basic filesystem hierarchy of a
+ Vyatta Network OS system, and several important miscellaneous files.

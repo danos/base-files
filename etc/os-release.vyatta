@@ -1,0 +1,7 @@
+PRETTY_NAME="DANOS"
+NAME="DANOS"
+ID=vyatta
+ID_LIKE=debian
+HOME_URL="www.att.com"
+SUPPORT_URL="www.att.com"
+BUG_REPORT_URL="www.att.com"
