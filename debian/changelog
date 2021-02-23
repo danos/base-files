@@ -1,3 +1,10 @@
+base-files (0.7) unstable; urgency=medium
+
+  [ Daniel Gollub ]
+  * debian: update Maintainer contact
+
+ -- Nicholas Brown <nick.brown@att.com>  Tue, 23 Feb 2021 11:09:51 +0000
+
 base-files (0.6) vyatta; urgency=medium
 
   * DANOS Import master
